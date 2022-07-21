@@ -1,0 +1,21 @@
+<section class="wrapper">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Lista de Tarefas</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field class="form-fiel">
+        <mat-label>Tarefa:</mat-label>
+        <input type="text" matInput #todo 
+          placeholder="Digite a ua tarefa" (keyup.enter)="addTodo(todo.value);
+            todo.value = '' ">
+      </mat-form-field>
+      <mat-list role="list">
+        <div *ngFor="let todo of todos;">
+          <p>todo.title</p>
+          <app-todo-item [todo]="todo"></app-todo-item>
+        </div>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</section>
